@@ -1,6 +1,12 @@
 -module(parserl_tests).
 -include_lib("eunit/include/eunit.hrl").
 
+parse_empty_field_no_delimiters_test() ->
+    [[]] = parserl:parse_string("", ",", "").
+
+parse_single_field_no_delimiters_test() ->
+    [",,,,"] = parserl:parse_string(",,,,", "|", "").
+
 parse_empty_unqualified_test() ->
     [[],[],[],[],[]] = parserl:parse_string(",,,,", ",","").
 
@@ -90,8 +96,6 @@ parse_qualified_string_with_escaped_qualifiers_and_nested_delimsC_and_spaced_tes
 
 parse_qualified_string_surrounded_by_empty_unqualifieds_and_spaced_test() ->
    [[],"Field 2","Some \",,escaped qualifiers,,\" here",[]] = parserl:parse_string(",\" Field 2\", \" Some \"\",,escaped qualifiers,,\"\" here\",", ",", "\"").
-
-
 
 parse_qualified_string_with_compound_delimiter_spaces_no_options_test() ->
     [" Bugs "," Bunny "," Road "," Runner ",[],"10"] = parserl:parse_string("\" Bugs \"~$\" Bunny \"~$\" Road \"~$\" Runner \"~$~$10", "~$", "\"", []).

@@ -1,6 +1,12 @@
 -module(parserl_tests).
 -include_lib("eunit/include/eunit.hrl").
 
+parse_empty_field_no_delimiters_test() ->
+    [[]] = parserl:parse_string("", ",", "").
+
+parse_single_field_no_delimiters_test() ->
+    [",,,,"] = parserl:parse_string(",,,,", "|", "").
+
 parse_empty_unqualified_test() ->
     [[],[],[],[],[]] = parserl:parse_string(",,,,", ",","").
 

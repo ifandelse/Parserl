@@ -72,8 +72,8 @@ parse_fields(Accum) ->
 
 parse_fields([], _, _, _, Accum) ->
     lists:reverse(Accum);
-parse_fields([{line_start, line_end} | _], _, _, _, Accum) ->
-    parse_fields([ [] | Accum ]);
+parse_fields([{line_start, line_end} | _], Line, _, _, Accum) ->
+    parse_fields([ Line | Accum ]);
 parse_fields([{line_start, 1} | Rest ], Line, DelimiterLen, Len, Accum) ->
     parse_fields(Rest, Line, DelimiterLen, Len, [ [] | Accum ]);
 parse_fields([{line_start, FieldStop} | Rest ], Line, DelimiterLen, Len, Accum) ->
