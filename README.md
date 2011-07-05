@@ -8,7 +8,7 @@ The company I work for - Terenine - deserves tons of credit for enabling me to w
 
 #How To Use
 
-### Erlang ### 
+```erlang 
 	% Parsing a string with comma delimiters and quote qualifiers
 	TestString = "10,\"Some quoted Text\",plain text,\"Some \"\"escaped qualifiers\"\"\"".
 	parserl:parse_string(TestString, ",", "\"").
@@ -27,5 +27,6 @@ The company I work for - Terenine - deserves tons of credit for enabling me to w
 	TestStringC = " This, line, has, spaces, before, each, value".
 	parserl:parse_string(TestStringC, ",","", []).
     % [" This"," line"," has"," spaces"," before"," each"," value"]
+```
 
 	
