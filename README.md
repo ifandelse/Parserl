@@ -4,7 +4,7 @@ A small Erlang utility library that parses delimited text, including "qualified"
 
 #Credit
 
-The company I work for - Terenine - deserves tons of credit for enabling me to work on this problem on-the-clock in addition to the late hours I've invested into it.
+The company I work for - Terenine - deserves tons of credit & thanks for enabling me to work on this problem on-the-clock in addition to the late hours I've invested into it.
 
 #How To Use
 

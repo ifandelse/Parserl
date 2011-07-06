@@ -1,5 +1,5 @@
 -module(parserl).
-
+-author('Jim Cowart').
 -export([parse_string/3, parse_string/4]).       
 
 parse_string(Line, Delimiter, Qualifier) ->
@@ -40,16 +40,16 @@ purge_false_delims(Delims, []) ->
     Delims;
 purge_false_delims(Delims, [_ | []]) ->
     purge_false_delims(Delims, []);
-purge_false_delims(Delims, [QFirst | [ QSecond | []  ]]) ->
-    NewDelims = lists:filter(fun(Elem) ->
-                                     if
-                                         Elem == line_start -> true;
-                                         Elem == line_end -> true;
-                                         true -> Elem < QFirst orelse Elem > QSecond
-                                     end
-                             end,
-                             Delims),
-    purge_false_delims(NewDelims, []);
+%% purge_false_delims(Delims, [QFirst | [ QSecond | []  ]]) ->
+%%     NewDelims = lists:filter(fun(Elem) ->
+%%                                      if
+%%                                          Elem == line_start -> true;
+%%                                          Elem == line_end -> true;
+%%                                          true -> Elem < QFirst orelse Elem > QSecond
+%%                                      end
+%%                              end,
+%%                              Delims),
+%%     purge_false_delims(NewDelims, []);
 purge_false_delims(Delims, [QFirst | [ QSecond | Quals ] ]) ->
     NewDelims = lists:filter(fun(Elem) ->
                                      if
