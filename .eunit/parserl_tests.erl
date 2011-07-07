@@ -14,7 +14,7 @@ parse_empty_unqualified_dual_compound_delimiter_test() ->
     [[],[],[],[],[],[]] = parserl:parse_string("~$~$~$~$~$", "~$","").
 
 parse_empty_unqualified_dual_compound_same_delimiter_test() ->
-    [[],[],[],[],[],[]] = erlastic:parse_string(",,,,,,,,,,", ",,","").
+    [[],[],[],[],[],[]] = parserl:parse_string(",,,,,,,,,,", ",,","").
 
 parse_empty_unqualified_triple_compound_delimiter_test() ->
     [[],[],[],[],[],[]] = parserl:parse_string("~$~~$~~$~~$~~$~", "~$~","").
